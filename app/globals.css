@@ -1,21 +1,370 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+/* Background image for home page */
+.home-page-background {
+    background-image: url('https://www.boldplanning.com/wp-content/uploads/2016/10/iStock-628033328.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100vh; /* Full viewport height */
+    position: relative;
+}
+/* Border for the Experience page */
+.experience-page-border {
+    border: 20px solid transparent; /* Create a transparent border */
+    border-image: url('https://www.boldplanning.com/wp-content/uploads/2016/10/iStock-628033328.jpg') 30 stretch; /* Apply the background image as a border */
+    border-radius: 15px; /* Optional: round the corners of the border */
+    padding: 20px; /* Ensure inner content isn't touching the border */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Page content inside the Experience page */
+.page-content {
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for content */
+    border-radius: 15px;
+    padding: 40px;
+    margin: 40px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Existing styles */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #051622; /* Default background color */
+    color: #fff;
 }
+
+html, body, #app {
+    height: 100%;
+}
+
+h1, h2, h3 {
+    color: #deb992; /* Light beige */
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 4rem; /* Increase h1 size */
+}
+
+h2 {
+    font-family: 'Abril Fatface', serif; /* Or any other font you prefer */
+    font-size: 3.5rem;
+    color: #d1d1d1; /* Light grey color */
+    font-weight: 700;
+    text-align: left; /* Align the heading to the left */
+    letter-spacing: 1px;
+    margin-left: -120; /* Make sure there's no margin */
+    margin-top: 50px;
+}
+h3 {
+    font-size: 2rem; /* Adjust for smaller headings */
+}
+
+/* For Paragraph */
+p {
+    font-size: 1.25rem; /* Increase paragraph size */
+    line-height: 1.6; /* Add line height for better readability */
+    font-weight: normal; /* Normal weight for paragraph text */
+    color: #d1d1d1; /* Light grey color */
+    margin-top: 20px;
+    text-align: left; /* Left-align the paragraph text */
+    max-width: 700px; /* Limit the width for better readability */
+    padding-left: 0; /* Remove padding for no space from the left */
+    margin-left: -10%; /* Move text 1/4th more left */
+}
+
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: #deb992;
+}
+
+    a:hover {
+        color: #1ba098; /* Teal */
+        transform: scale(1.05);
+    }
+
+input[type="text"] {
+    background-color: #1ba098;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1; /* Ensure text content is above image */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px 0;
+    text-transform: uppercase;
+}
+
+    .navbar a {
+        font-size: 1.25rem;
+        font-weight: bold;
+        padding: 12px 20px;
+        border-radius: 8px;
+    }
+
+        .navbar a:hover {
+            background-color: #deb992;
+            transform: scale(1.05);
+        }
+
+/* Afnan Monzur Section Styling (Bottom-left version) */
+.afnan-monzur-section {
+    position: absolute;
+    bottom: 50px; /* Adjusted to position slightly higher */
+    left: 50px; /* Keep slightly to the right */
+    z-index: 2; /* Ensure it's on top */
+    padding: 0 20px; /* Padding for spacing */
+}
+
+/* Text container for Afnan and Monzur */
+.afnan-monzur-text {
+    position: relative;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 0; /* Remove any margin */
+}
+
+    /* "Afnan" styling */
+    .afnan-monzur-text .afnan {
+        font-family: 'Dancing Script', cursive; /* Cursive blocky font */
+        font-size: 7rem; /* Adjust size */
+        font-weight: normal;
+        color: #d1d1d1; /* Light gray for "Afnan" */
+        margin: 0; /* Remove margin to eliminate space between lines */
+        letter-spacing: 0px; /* No gap between letters */
+    }
+
+    /* Reflection effect for "Monzur" */
+    .afnan-monzur-text .reflection {
+        font-family: 'Dancing Script', cursive; /* Cursive blocky font */
+        font-size: 7rem; /* Adjust size */
+        font-weight: normal;
+        color: rgba(0, 217, 255, 0.6); /* Light blue reflection color with transparency */
+        margin-top: 0; /* No gap between reflection and Monzur */
+        opacity: 0.4; /* Subtle reflection */
+        transform: scale(1.02) rotateX(180deg); /* Mirror reflection */
+    }
+
+
+/* Outer background for Projects page */
+.page-container {
+    background-image: url('https://www.boldplanning.com/wp-content/uploads/2016/10/iStock-628033328.jpg'); /* Background image URL */
+    background-size: cover; /* Ensure the background image covers the entire container */
+    background-position: center center; /* Position the background image */
+    background-attachment: fixed; /* Keep the background fixed while scrolling */
+    min-height: 100vh; /* Full viewport height */
+    padding: 20px; /* Optional: Adds padding if you need spacing from the edges */
+}
+
+/* Keep the inner content box black with a slightly transparent background */
+.page-content {
+    background-color: rgba(5, 22, 34, 0.9); /* Dark background box (almost black) */
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    max-width: 1200px; /* Optional: Set a max-width for content box */
+    z-index: 2; /* Ensure it stays above the background */
+}
+
+.projects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    align-items: center;
+}
+
+/* Center content inside each project/item */
+.project-item {
+    background-color: #051622;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Adjust height based on content */
+    text-align: center;
+    border: 10px solid transparent; /* Transparent border to hold image */
+    border-image: url('https://www.boldplanning.com/wp-content/uploads/2016/10/iStock-628033328.jpg') 30 stretch; /* Set background image for the border */
+}
+
+    .project-item h3 {
+        color: #deb992;
+        font-size: 1.75rem;
+        margin-bottom: 10px;
+    }
+
+    .project-item p {
+        color: #fff;
+        font-size: 1rem;
+        margin: 0;
+        text-align: center;
+        width: 100%;
+        line-height: 1.5;
+    }
+
+/* Additional styles for the projects page */
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.page-header h2 {
+    font-size: 1.5rem;
+    color: #deb992;
+    margin-bottom: 20px;
+}
+
+
+
+/* About Page Outer Container */
+.about-page-container {
+    background-image: url('https://www.boldplanning.com/wp-content/uploads/2016/10/iStock-628033328.jpg'); /* Homepage background URL */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: flex-start; /* Start from the top to reduce space at the top */
+    padding: 0; /* Remove padding to reduce space */
+}
+
+/* About Section Content Box */
+.about-section {
+    background-color: rgba(5, 22, 34, 0.9); /* Dark background box (almost black) */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    max-width: 800px; /* Optional: Set a max-width for content box */
+    text-align: center; /* Center content inside the section */
+    z-index: 2; /* Ensure it stays above the background */
+    margin-top: 50px; /* Reduced top margin to reduce space */
+}
+
+/* About Box Styling */
+.about-box {
+    background-color: #051622;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px; /* Space between boxes */
+    width: 100%; /* Ensure box takes up full width of the section */
+}
+
+    /* About Title Styling */
+    .about-box h3 {
+        color: #deb992;
+        font-size: 1.75rem;
+        margin-bottom: 15px;
+    }
+
+    /* About Paragraph Styling */
+    .about-box p {
+        color: #fff;
+        font-size: 1rem;
+        margin: 0;
+        width: 90%; /* Limit width for better readability */
+        text-align: center;
+    }
+
+
+
+/* Style for the search bar */
+input[type="text"] {
+    width: 50%; /* Keep the width to 50% of its container */
+    padding: 12px 20px; /* Keep the padding for better spacing inside */
+    border-radius: 5px; /* Adjusted to create a rectangular shape */
+    background-color: #808080; /* Grey background */
+    border: 2px solid #deb992; /* Light border color */
+    color: #deb992; /* Text color */
+    margin: 0 auto; /* Center the search bar horizontally */
+    display: block; /* Make the search bar a block element */
+    font-size: 1.2rem; /* Adjust font size */
+    margin-bottom: 20px; /* Add spacing below the search bar */
+    text-align: center; /* Center the text inside the search bar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for depth */
+}
+
+    /* Placeholder text style */
+    input[type="text"]::placeholder {
+        color: #deb992; /* Light beige placeholder text */
+        font-size: 1rem; /* Adjust font size of placeholder */
+    }
+
+
+/* Italic Quote Styling */
+.italic-quote {
+    font-family: 'Georgia', serif; /* Use Georgia for better readability */
+    font-style: italic; /* Italicize the quote */
+    color: #deb992; /* Light beige color for better readability */
+    font-size: 1.8rem; /* Make the font size larger */
+    line-height: 1.6; /* Increase line height for better readability */
+    font-weight: normal; /* Regular weight for better legibility */
+    margin-top: 40px; /* Add margin for spacing */
+    letter-spacing: 0.5px; /* Slightly space out the letters for better visual flow */
+    max-width: 50%; /* Narrower max-width for two-line quote display */
+    text-align: left; /* Left-align the quote */
+    margin-left: -6%; /* Push the quote more to the left */
+    margin-right: auto; /* Center the text block on the left */
+    padding-right: 10px; /* Optional: Add some padding on the right */
+}
+
+
+
+
+/* Text Alignment for Home Page */
+.home-header {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%); /* Center vertically */
+    text-align: left; /* Align to the left */
+    z-index: 1;
+}
+
+    .home-header h1 {
+        font-size: 5rem; /* Adjust size for the home page */
+        color: #deb992;
+        margin-bottom: 20px;
+    }
+
+    .home-header h2 {
+        font-size: 3rem; /* Adjust size for subheading */
+        color: #deb992;
+    }
+
+    .home-header p {
+        font-size: 1.5rem; /* Larger caption text */
+        color: #deb992;
+    }
